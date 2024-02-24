@@ -1,3 +1,3 @@
-import { championController } from './champion.js';
+import { championController } from "./champion/championController.js";
 
-championController();
+document.addEventListener('DOMContentLoaded', championController);
