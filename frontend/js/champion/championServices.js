@@ -1,4 +1,5 @@
 const apiUrl = "http://localhost:3000/champion";
+let token = localStorage.getItem("token");
 
 async function makeRequest(url, method = "GET", body = null) {
   try {
@@ -8,6 +9,11 @@ async function makeRequest(url, method = "GET", body = null) {
         "Content-Type": "application/json",
       },
     };
+
+    if (token) {
+      options.headers["x-access-token"] = token;
+    }
+
     if (body) {
       options.body = JSON.stringify(body);
     }

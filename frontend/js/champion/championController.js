@@ -118,7 +118,6 @@ const championController = async () => {
   // Delete a champion
   deleteButtons.forEach((button) => {
     button.addEventListener("click", async () => {
-      console.log(button.id)
       await deleteChampion(button.id);
       window.location.href = "index.html";
     });
